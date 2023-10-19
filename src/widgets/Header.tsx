@@ -1,12 +1,15 @@
-import { Link, RouteObject } from 'react-router-dom'
+import { Button } from '@mui/material'
+import { Link } from 'react-router-dom'
 
-export default function Header({ routes }: { routes: RouteObject[] }) {
+import { Route } from '../providers/router/models/route'
+
+export default function Header({ routes }: { routes: Route[] }) {
   return (
     <header>
       {routes.map((r) => (
-        <Link key={r.path} to={r.path!}>
-          {r.path}
-        </Link>
+        <Button key={r.path} component={Link} to={r.path}>
+          {r.name}
+        </Button>
       ))}
     </header>
   )

@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material'
+
+import reactLogo from '../../public/react.svg'
 import viteLogo from '../../public/vite.svg'
-import reactLogo from '../assets/react.svg'
 import Counter from '../widgets/Counter'
 
 export default function CounterPage() {
@@ -13,11 +15,9 @@ export default function CounterPage() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <Typography variant="h2">Vite + React</Typography>
       <Counter></Counter>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Typography>Click on the Vite and React logos to learn more</Typography>
     </>
   )
 }

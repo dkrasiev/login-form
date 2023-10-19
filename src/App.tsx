@@ -1,5 +1,6 @@
 import AppLayout from './layouts/AppLayout'
 import { AppRoutes, withRouter } from './providers/router'
+import { withTheme } from './providers/theme'
 
 function AppComponent() {
   return (
@@ -10,5 +11,5 @@ function AppComponent() {
 }
 
 export default function App() {
-  return withRouter(<AppComponent />)
+  return withTheme(withRouter(<AppComponent />))
 }

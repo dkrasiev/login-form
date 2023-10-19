@@ -1,6 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom'
 
-import { ROUTES } from "./routes";
+import { ROUTES } from '../consts/routes'
 
 export function AppRoutes() {
   return (
@@ -9,5 +9,5 @@ export function AppRoutes() {
         <Route key={r.path} {...r} />
       ))}
     </Routes>
-  );
+  )
 }
