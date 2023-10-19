@@ -1,7 +1,9 @@
-import { createTheme } from '@mui/material'
+import { createTheme, ThemeOptions } from '@mui/material'
 
-export const theme = createTheme({
+export const themeOptions: ThemeOptions = {
   shape: {
-    borderRadius: 16,
+    borderRadius: 32,
   },
-})
+}
+
+export const theme = createTheme(themeOptions)

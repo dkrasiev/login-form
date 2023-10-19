@@ -5,7 +5,7 @@ type LoginFormProps = {
   onSubmit?: (username: string, password: string) => void
 }
 
-export default function LoginForm({ onSubmit }: LoginFormProps) {
+export const LoginForm = ({ onSubmit }: LoginFormProps) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -27,7 +27,7 @@ export default function LoginForm({ onSubmit }: LoginFormProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack direction="column" spacing={2} p={2}>
+      <Stack direction="column" spacing={2}>
         <Typography variant="h3">Login form</Typography>
         <Input
           value={username}

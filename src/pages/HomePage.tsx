@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 
-export default function HomePage() {
+export const HomePage = () => {
   return (
     <>
       <Typography variant="h2">Home page</Typography>

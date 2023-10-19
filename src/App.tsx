@@ -1,8 +1,8 @@
-import AppLayout from './layouts/AppLayout'
+import { AppLayout } from './layouts'
 import { AppRoutes, withRouter } from './providers/router'
 import { withTheme } from './providers/theme'
 
-function AppComponent() {
+export const AppComponent = () => {
   return (
     <AppLayout>
       <AppRoutes />
@@ -10,6 +10,4 @@ function AppComponent() {
   )
 }
 
-export default function App() {
-  return withTheme(withRouter(<AppComponent />))
-}
+export const App = () => withTheme(withRouter(<AppComponent />))

@@ -1,19 +1,19 @@
-import { Card, CardContent } from '@mui/material'
+import { Paper, Stack } from '@mui/material'
 
-import LoginForm from '../widgets/LoginForm'
+import { LoginForm } from '../widgets/LoginForm'
 
-export default function LoginPage() {
+export const LoginPage = () => {
   const handleLoginFormSubmit = (username: string, password: string) => {
     console.log('auth', username, password)
   }
 
   return (
     <>
-      <Card>
-        <CardContent>
+      <Paper elevation={4}>
+        <Stack p={4}>
           <LoginForm onSubmit={handleLoginFormSubmit}></LoginForm>
-        </CardContent>
-      </Card>
+        </Stack>
+      </Paper>
       {}
     </>
   )

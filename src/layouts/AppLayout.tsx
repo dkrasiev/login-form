@@ -1,17 +1,24 @@
-import { Container } from '@mui/material'
+import { Container, Stack } from '@mui/material'
 import { ReactNode } from 'react'
 
 import { ROUTES } from '../providers/router'
-import Header from '../widgets/Header'
+import { Header } from '../widgets/Header'
 
-export default function AppLayout({ children }: { children: ReactNode }) {
+export const AppLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <Container>
-      <Header routes={ROUTES} />
+    <>
+      <Header
+        component="header"
+        routes={{
+          home: ROUTES.home.path,
+          login: ROUTES.login.path,
+          profile: ROUTES.profile.path,
+        }}
+      />
 
-      <main>{children}</main>
-
-      <footer></footer>
-    </Container>
+      <Stack component="main" sx={{ mt: 16 }}>
+        <Container maxWidth="md">{children}</Container>
+      </Stack>
+    </>
   )
 }

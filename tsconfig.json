@@ -23,9 +23,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src",
-    "public/react.svg",
-    "public/react.svg"
+    "src"
   ],
   "references": [
     {
