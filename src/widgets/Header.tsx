@@ -1,4 +1,4 @@
-import { Link, RouteObject } from "react-router-dom";
+import { Link, RouteObject } from 'react-router-dom'
 
 export default function Header({ routes }: { routes: RouteObject[] }) {
   return (
@@ -9,5 +9,5 @@ export default function Header({ routes }: { routes: RouteObject[] }) {
         </Link>
       ))}
     </header>
-  );
+  )
 }

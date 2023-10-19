@@ -1,6 +1,6 @@
-import viteLogo from "../../public/vite.svg";
-import reactLogo from "../assets/react.svg";
-import Counter from "../widgets/Counter";
+import viteLogo from '../../public/vite.svg'
+import reactLogo from '../assets/react.svg'
+import Counter from '../widgets/Counter'
 
 export default function CounterPage() {
   return (
@@ -19,5 +19,5 @@ export default function CounterPage() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  );
+  )
 }

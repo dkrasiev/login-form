@@ -1,15 +1,15 @@
-import { RouteProps } from "react-router-dom";
+import { RouteProps } from 'react-router-dom'
 
-import CounterPage from "../../pages/CounterPage";
-import TestPage from "../../pages/TestPage";
+import CounterPage from '../../pages/CounterPage'
+import TestPage from '../../pages/TestPage'
 
 export const ROUTES: RouteProps[] = [
   {
-    path: "/",
+    path: '/',
     element: TestPage(),
   },
   {
-    path: "/counter",
+    path: '/counter',
     element: CounterPage(),
   },
-];
+]

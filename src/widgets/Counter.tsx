@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export default function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <div className="card">
@@ -12,5 +12,5 @@ export default function Counter() {
         Edit <code>src/App.tsx</code> and save to test HMR
       </p>
     </div>
-  );
+  )
 }

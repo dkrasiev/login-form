@@ -3,5 +3,5 @@ export default function TestPage() {
     <>
       <h2>Test page</h2>
     </>
-  );
+  )
 }
