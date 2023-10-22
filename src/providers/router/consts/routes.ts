@@ -1,22 +1,23 @@
 import { HomePage } from '../../../pages/HomePage'
 import { LoginPage } from '../../../pages/LoginPage'
 import { ProfilePage } from '../../../pages/ProfilePage'
+import { AppPage } from '../models/app-page'
+import { AppRoute } from '../models/app-route'
 import { Route } from '../models/route'
-import { AppPage } from './pages'
 
 export const ROUTES: Record<AppPage, Route> = {
   [AppPage.HOME]: {
-    path: '/',
+    path: AppRoute.HOME,
     element: HomePage(),
     name: 'Home',
   },
   [AppPage.LOGIN]: {
-    path: '/login',
+    path: AppRoute.LOGIN,
     element: LoginPage(),
     name: 'Login',
   },
   [AppPage.PROFILE]: {
-    path: '/profile',
+    path: AppRoute.PROFILE,
     element: ProfilePage(),
     name: 'Profile',
   },

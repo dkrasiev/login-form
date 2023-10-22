@@ -1,6 +1,8 @@
 import { RouteProps } from 'react-router-dom'
 
+import { AppRoute } from './app-route'
+
 export type Route = RouteProps & {
-  path: string
+  path: AppRoute,
   name: string
 }
