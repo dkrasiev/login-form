@@ -1,1 +1,1 @@
-export * from './withTheme'
+export * from './with-theme'
