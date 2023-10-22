@@ -22,38 +22,45 @@ export const Header = ({ routes, component }: HeaderProps) => {
   return (
     <Box sx={{ flexGrow: 1 }} component={component}>
       <AppBar position="static">
-        <Toolbar>
-          <Typography
-            variant="h5"
-            component={RouterLink}
-            to={routes.home}
-            color="inherit"
-            flexGrow={1}
-            sx={{ textDecoration: 'none' }}
-          >
-            Home
-          </Typography>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Box>
+            <Typography
+              variant="h5"
+              component={RouterLink}
+              to={routes.home}
+              color="inherit"
+              sx={{ textDecoration: 'none' }}
+            >
+              Home
+            </Typography>
+          </Box>
 
-          {user ? (
-            <>
-              <Button
-                color="inherit"
-                component={RouterLink}
-                to={routes.profile}
-              >
-                <Typography>Profile</Typography>
-              </Button>
-              <Button color="inherit" onClick={() => dispatch(logout())}>
-                <Typography>Logout</Typography>
-              </Button>
-            </>
-          ) : (
-            <>
-              <Button color="inherit" component={RouterLink} to={routes.login}>
-                <Typography>Login</Typography>
-              </Button>
-            </>
-          )}
+          <Box>
+            {user ? (
+              <>
+                <Button
+                  color="inherit"
+                  component={RouterLink}
+                  to={routes.profile}
+                >
+                  <Typography>Profile</Typography>
+                </Button>
+                <Button color="inherit" onClick={() => dispatch(logout())}>
+                  <Typography>Logout</Typography>
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  color="inherit"
+                  component={RouterLink}
+                  to={routes.login}
+                >
+                  <Typography>Login</Typography>
+                </Button>
+              </>
+            )}
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
