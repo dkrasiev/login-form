@@ -1,12 +1,10 @@
 import { Typography } from '@mui/material'
 
-import { useUser, useUserGuard } from '../hooks'
+import { useUser } from '../hooks'
 import { AppLayout } from '../layouts'
 
 export const ProfilePage = () => {
   const user = useUser()
-
-  useUserGuard()
 
   return (
     <AppLayout title="Profile">

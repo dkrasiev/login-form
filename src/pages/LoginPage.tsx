@@ -8,15 +8,11 @@ import {
 } from '@mui/material'
 
 import { LoginForm } from '../components/LoginForm'
-import { useUserGuard } from '../hooks/use-user-guard'
 import { AppLayout } from '../layouts'
 import { login } from '../modules/user'
-import { AppRoute } from '../providers/router'
 import { useAppDispatch, useAppSelector } from '../providers/store'
 
 export const LoginPage = () => {
-  useUserGuard((user) => Boolean(user), AppRoute.PROFILE)
-
   const dispatch = useAppDispatch()
 
   const userState = useAppSelector((state) => state.user)

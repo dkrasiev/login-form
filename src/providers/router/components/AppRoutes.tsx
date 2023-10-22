@@ -1,11 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
+import { useAppRoutes } from '../hooks/use-app-routes'
 
-import { ROUTES } from '../consts/routes'
-
-export const AppRoutes = () => (
-  <Routes>
-    {Object.values(ROUTES).map((r) => (
-      <Route key={r.path} {...r} />
-    ))}
-  </Routes>
-)
+export const AppRoutes = () => {
+  const routing = useAppRoutes()
+  return <>{routing}</>
+}
