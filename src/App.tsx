@@ -1,8 +1,8 @@
-import { AppRoutes, withRouter } from './providers/router'
-import { withTheme } from './providers/theme'
+import { AppRoutes } from './providers/router'
+import { withProviders } from './providers/withProviders'
 
 export const AppComponent = () => {
   return <AppRoutes />
 }
 
-export const App = () => withTheme(withRouter(<AppComponent />))
+export const App = () => withProviders(<AppComponent />)

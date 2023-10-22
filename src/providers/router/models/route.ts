@@ -3,6 +3,6 @@ import { RouteProps } from 'react-router-dom'
 import { AppRoute } from './app-route'
 
 export type Route = RouteProps & {
-  path: AppRoute,
+  path: AppRoute
   name: string
 }
