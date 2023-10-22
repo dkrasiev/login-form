@@ -3,4 +3,5 @@ import { ReactNode } from 'react'
 
 import { theme } from './theme'
 
-export const withTheme = (children: ReactNode) => ThemeProvider({ theme, children })
+export const withTheme = (children: ReactNode) =>
+  ThemeProvider({ theme, children })

@@ -1,8 +1,8 @@
 import { Container, Stack, Typography } from '@mui/material'
 import { PropsWithChildren } from 'react'
 
+import { Header } from '../components/Header'
 import { AppRoute } from '../providers/router'
-import { Header } from '../widgets/Header'
 
 type AppLayoutProps = PropsWithChildren<{
   title?: string

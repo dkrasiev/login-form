@@ -1,8 +1,8 @@
-import { UserCredentials } from "./user-credentials"
+import { UserCredentials } from './user-credentials'
 
 export const MOCK_USERS_CREDENTIALS: UserCredentials[] = [
-    {
-        username: "Admin",
-        password: "12345"
-    }
+  {
+    username: 'Admin',
+    password: '12345',
+  },
 ]

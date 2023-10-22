@@ -1,11 +1,11 @@
 import { Alert, AlertTitle, Paper, Stack } from '@mui/material'
 
+import { LoginForm } from '../components/LoginForm'
 import { useUserGuard } from '../hooks/use-user-guard'
 import { AppLayout } from '../layouts'
 import { login } from '../modules/user'
 import { AppRoute } from '../providers/router'
 import { useAppDispatch, useAppSelector } from '../providers/store'
-import { LoginForm } from '../widgets/LoginForm'
 
 export const LoginPage = () => {
   useUserGuard((user) => Boolean(user), AppRoute.PROFILE)
