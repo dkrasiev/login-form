@@ -1,4 +1,5 @@
-import { User } from '../models/user'
+import { User } from '../../models/user'
+import { MOCK_USERS_CREDENTIALS } from '../mock-user-credentials'
 
 export const authorize = (
   username: string,
@@ -6,7 +7,11 @@ export const authorize = (
 ): Promise<User> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (username === 'admin' && password === '123456') {
+      if (
+        MOCK_USERS_CREDENTIALS.some(
+          (u) => u.username === username && u.password === password,
+        )
+      ) {
         resolve({
           username,
         })

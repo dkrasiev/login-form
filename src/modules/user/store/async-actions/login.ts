@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import { authorize } from '../../api/authorize'
+import { authorize } from '../../mock/api/authorize'
 
 type AuthorizeUserProps = {
   username: string
