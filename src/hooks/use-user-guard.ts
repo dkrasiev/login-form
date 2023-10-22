@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { User } from '../modules/user'
 import { AppRoute } from '../providers/router'
-import { User } from '../providers/store'
 import { useUser } from './use-user'
 
 /**

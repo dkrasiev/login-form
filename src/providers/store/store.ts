@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import { userSlice } from './features/user'
+import { userSlice } from '../../modules/user'
 
 export const store = configureStore({
   reducer: {
@@ -9,5 +9,5 @@ export const store = configureStore({
 })
 
 store.subscribe(() => {
-  localStorage.setItem('user', JSON.stringify(store.getState().user))
+  localStorage.setItem('user', JSON.stringify(store.getState().user.user))
 })

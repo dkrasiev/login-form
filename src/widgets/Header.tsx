@@ -1,10 +1,10 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
 import { ElementType } from 'react'
-import { useDispatch } from 'react-redux'
 import { Link as RouterLink } from 'react-router-dom'
 
 import { useUser } from '../hooks'
-import { logout } from '../providers/store'
+import { logout } from '../modules/user'
+import { useAppDispatch } from '../providers/store/hooks'
 
 type HeaderProps = {
   routes: {
@@ -16,7 +16,7 @@ type HeaderProps = {
 }
 
 export const Header = ({ routes, component }: HeaderProps) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const user = useUser()
 
   return (

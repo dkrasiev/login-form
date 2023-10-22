@@ -3,9 +3,10 @@ import { ChangeEventHandler, FormEventHandler, useState } from 'react'
 
 type LoginFormProps = {
   onSubmit?: (username: string, password: string) => void
+  isLoading?: boolean
 }
 
-export const LoginForm = ({ onSubmit }: LoginFormProps) => {
+export const LoginForm = ({ onSubmit, isLoading }: LoginFormProps) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -25,6 +26,12 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
     }
   }
 
+  const button = isLoading ? (
+    <Button disabled>Logging in...</Button>
+  ) : (
+    <Button type="submit">Login</Button>
+  )
+
   return (
     <form onSubmit={handleSubmit}>
       <Stack direction="column" spacing={2}>
@@ -32,17 +39,19 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
         <Input
           value={username}
           onChange={handleUsernameChange}
+          required
           name="username"
           placeholder="Username"
         />
         <Input
           value={password}
           onChange={handlePasswordChange}
+          required
           name="password"
           placeholder="Password"
           type="password"
         />
-        <Button type="submit">Login</Button>
+        {button}
       </Stack>
     </form>
   )

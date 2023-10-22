@@ -1,7 +1,5 @@
-import { useSelector } from 'react-redux'
-
-import { selectUser } from '../providers/store'
+import { selectUser, useAppSelector } from '../providers/store'
 
 export const useUser = () => {
-  return useSelector(selectUser)
+  return useAppSelector(selectUser)
 }

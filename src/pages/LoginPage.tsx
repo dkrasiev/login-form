@@ -1,28 +1,41 @@
-import { Paper, Stack } from '@mui/material'
-import { useDispatch } from 'react-redux'
+import { Alert, AlertTitle, Paper, Stack } from '@mui/material'
 
 import { useUserGuard } from '../hooks/use-user-guard'
 import { AppLayout } from '../layouts'
-import { login } from '../providers/store'
+import { login } from '../modules/user'
+import { AppRoute } from '../providers/router'
+import { useAppDispatch, useAppSelector } from '../providers/store'
 import { LoginForm } from '../widgets/LoginForm'
 
 export const LoginPage = () => {
-  const dispatch = useDispatch()
+  useUserGuard((user) => Boolean(user), AppRoute.PROFILE)
 
-  useUserGuard((user) => Boolean(user))
+  const dispatch = useAppDispatch()
+
+  const userState = useAppSelector((state) => state.user)
+
+  const isLoading = userState.status === 'pending'
+  const error = userState.error
 
   const handleLoginFormSubmit = (username: string, password: string) => {
-    console.log(username, password)
-    if (username === 'admin' && password === '123456') {
-      dispatch(login({ username }))
-    }
+    dispatch(login({ username, password }))
   }
 
   return (
     <AppLayout title="Login">
       <Paper elevation={4}>
         <Stack p={4}>
-          <LoginForm onSubmit={handleLoginFormSubmit}></LoginForm>
+          <LoginForm
+            onSubmit={handleLoginFormSubmit}
+            isLoading={isLoading}
+          ></LoginForm>
+
+          {error && (
+            <Alert severity="error">
+              <AlertTitle>Authorization error</AlertTitle>
+              {error}
+            </Alert>
+          )}
         </Stack>
       </Paper>
     </AppLayout>
