@@ -1,4 +1,5 @@
-import { Button, Input, Stack, Typography } from '@mui/material'
+import { LoadingButton } from '@mui/lab'
+import { Stack, TextField } from '@mui/material'
 import { ChangeEventHandler, FormEventHandler, useState } from 'react'
 
 type LoginFormProps = {
@@ -26,33 +27,29 @@ export const LoginForm = ({ onSubmit, isLoading }: LoginFormProps) => {
     }
   }
 
-  const button = isLoading ? (
-    <Button disabled>Logging in...</Button>
-  ) : (
-    <Button type="submit">Login</Button>
-  )
-
   return (
-    <form onSubmit={handleSubmit}>
-      <Stack direction="column" spacing={2}>
-        <Typography variant="h3">Login form</Typography>
-        <Input
-          value={username}
-          onChange={handleUsernameChange}
-          required
-          name="username"
-          placeholder="Username"
-        />
-        <Input
-          value={password}
-          onChange={handlePasswordChange}
-          required
-          name="password"
-          placeholder="Password"
-          type="password"
-        />
-        {button}
-      </Stack>
-    </form>
+    <Stack
+      component="form"
+      onSubmit={handleSubmit}
+      direction="column"
+      spacing={2}
+    >
+      <TextField
+        value={username}
+        onChange={handleUsernameChange}
+        required
+        name="username"
+        placeholder="Username"
+      />
+      <TextField
+        value={password}
+        onChange={handlePasswordChange}
+        required
+        name="password"
+        placeholder="Password"
+        type="password"
+      />
+      <LoadingButton loading={isLoading} type="submit">Login</LoadingButton>
+    </Stack>
   )
 }

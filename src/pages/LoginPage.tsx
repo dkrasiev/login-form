@@ -1,4 +1,11 @@
-import { Alert, AlertTitle, Paper, Stack } from '@mui/material'
+import {
+  Alert,
+  AlertTitle,
+  Card,
+  CardContent,
+  CardHeader,
+  Stack,
+} from '@mui/material'
 
 import { LoginForm } from '../components/LoginForm'
 import { useUserGuard } from '../hooks/use-user-guard'
@@ -23,21 +30,26 @@ export const LoginPage = () => {
 
   return (
     <AppLayout title="Login">
-      <Paper elevation={4}>
-        <Stack p={4} spacing={2}>
-          <LoginForm
-            onSubmit={handleLoginFormSubmit}
-            isLoading={isLoading}
-          ></LoginForm>
+      <Stack spacing={4}>
+        <Card>
+          <CardHeader title="Login form" />
+          <CardContent>
+            <Stack spacing={2}>
+              <LoginForm
+                onSubmit={handleLoginFormSubmit}
+                isLoading={isLoading}
+              ></LoginForm>
+            </Stack>
+          </CardContent>
+        </Card>
 
-          {error && (
-            <Alert severity="error">
-              <AlertTitle>Authorization error</AlertTitle>
-              {error}
-            </Alert>
-          )}
-        </Stack>
-      </Paper>
+        {error && (
+          <Alert severity="error">
+            <AlertTitle>Authorization error</AlertTitle>
+            {error}
+          </Alert>
+        )}
+      </Stack>
     </AppLayout>
   )
 }
