@@ -8,17 +8,17 @@ import { Route } from '../models/route'
 export const ROUTES: Record<AppPage, Route> = {
   [AppPage.HOME]: {
     path: AppRoute.HOME,
-    element: HomePage(),
+    Component: HomePage,
     name: 'Home',
   },
   [AppPage.LOGIN]: {
     path: AppRoute.LOGIN,
-    element: LoginPage(),
+    Component: LoginPage,
     name: 'Login',
   },
   [AppPage.PROFILE]: {
     path: AppRoute.PROFILE,
-    element: ProfilePage(),
+    Component: ProfilePage,
     name: 'Profile',
   },
 }

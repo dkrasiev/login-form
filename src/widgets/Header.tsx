@@ -1,6 +1,10 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
 import { ElementType } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link as RouterLink } from 'react-router-dom'
+
+import { useUser } from '../hooks'
+import { logout } from '../providers/store'
 
 type HeaderProps = {
   routes: {
@@ -12,7 +16,8 @@ type HeaderProps = {
 }
 
 export const Header = ({ routes, component }: HeaderProps) => {
-  const loggedIn = true
+  const dispatch = useDispatch()
+  const user = useUser()
 
   return (
     <Box sx={{ flexGrow: 1 }} component={component}>
@@ -29,14 +34,25 @@ export const Header = ({ routes, component }: HeaderProps) => {
             Home
           </Typography>
 
-          {loggedIn ? (
-            <Button color="inherit" component={RouterLink} to={routes.login}>
-              <Typography>Login</Typography>
-            </Button>
+          {user ? (
+            <>
+              <Button
+                color="inherit"
+                component={RouterLink}
+                to={routes.profile}
+              >
+                <Typography>Profile</Typography>
+              </Button>
+              <Button color="inherit" onClick={() => dispatch(logout())}>
+                <Typography>Logout</Typography>
+              </Button>
+            </>
           ) : (
-            <Button color="inherit" component={RouterLink} to={routes.profile}>
-              <Typography>Profile</Typography>
-            </Button>
+            <>
+              <Button color="inherit" component={RouterLink} to={routes.login}>
+                <Typography>Login</Typography>
+              </Button>
+            </>
           )}
         </Toolbar>
       </AppBar>

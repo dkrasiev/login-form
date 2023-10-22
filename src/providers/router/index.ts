@@ -1,3 +1,5 @@
 export * from './components/AppRoutes'
 export * from './consts/routes'
+export * from './models/app-page'
+export * from './models/app-route'
 export * from './withRouter'

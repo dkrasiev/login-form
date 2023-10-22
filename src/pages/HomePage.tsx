@@ -4,8 +4,8 @@ import { AppLayout } from '../layouts'
 
 export const HomePage = () => {
   return (
-    <AppLayout>
-      <Typography variant="h2">Home page</Typography>
+    <AppLayout title="Home">
+      <Typography variant="h2">This is the home page</Typography>
     </AppLayout>
   )
 }

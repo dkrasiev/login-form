@@ -1,3 +1,5 @@
 import { User } from './user'
 
-export type UserState = User
+export type UserState = {
+  user?: User
+}

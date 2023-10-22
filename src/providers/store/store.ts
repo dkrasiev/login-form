@@ -7,3 +7,7 @@ export const store = configureStore({
     user: userSlice.reducer,
   },
 })
+
+store.subscribe(() => {
+  localStorage.setItem('user', JSON.stringify(store.getState().user))
+})

@@ -1,23 +1,34 @@
-import { Container, Stack } from '@mui/material'
-import { ReactNode } from 'react'
+import { Container, Stack, Typography } from '@mui/material'
+import { PropsWithChildren } from 'react'
 
-import { ROUTES } from '../providers/router'
+import { AppRoute } from '../providers/router'
 import { Header } from '../widgets/Header'
 
-export const AppLayout = ({ children }: { children: ReactNode }) => {
+type AppLayoutProps = PropsWithChildren<{
+  title?: string
+}>
+
+export const AppLayout = ({ children, title }: AppLayoutProps) => {
   return (
     <>
       <Header
         component="header"
         routes={{
-          home: ROUTES.home.path,
-          login: ROUTES.login.path,
-          profile: ROUTES.profile.path,
+          home: AppRoute.HOME,
+          login: AppRoute.LOGIN,
+          profile: AppRoute.PROFILE,
         }}
       />
 
       <Stack component="main" sx={{ mt: 16 }}>
-        <Container maxWidth="md">{children}</Container>
+        <Container maxWidth="md">
+          {title && (
+            <Typography variant="h1" sx={{ mb: 4 }}>
+              {title}
+            </Typography>
+          )}
+          {children}
+        </Container>
       </Stack>
     </>
   )
