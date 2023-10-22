@@ -24,7 +24,7 @@ export const LoginPage = () => {
   return (
     <AppLayout title="Login">
       <Paper elevation={4}>
-        <Stack p={4}>
+        <Stack p={4} spacing={2}>
           <LoginForm
             onSubmit={handleLoginFormSubmit}
             isLoading={isLoading}
