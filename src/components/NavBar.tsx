@@ -1,7 +1,7 @@
 import { Button, Stack } from '@mui/material'
 import { Link } from 'react-router-dom'
 
-import { Route } from '../providers/router/models/route'
+import { Route } from '../providers/router'
 
 export const NavBar = ({ routes }: { routes: Route[] }) => {
   return (

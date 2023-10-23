@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom'
 
 import { useUser } from '../hooks'
 import { logout } from '../modules/user'
-import { useAppDispatch } from '../providers/store/hooks'
+import { useAppDispatch } from '../providers/store'
 
 type HeaderProps = {
   routes: {
